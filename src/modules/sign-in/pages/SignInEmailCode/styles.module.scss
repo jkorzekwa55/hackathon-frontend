@@ -10,13 +10,21 @@
   text-align: center;
 }
 
+.code_inputs {
+  display: flex;
+  gap: .5rem;
+  justify-content: center;
+}
+
 .numberInput {
-  width: 2vw;
   border-radius: 10px;
   height: 30px;
+  width: 3rem;
+  padding: .5rem 0;
   text-align: center;
-  margin-right: 0.5vw;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1.5rem;
+  border: 1px solid var(--light_gray);
 }
 
 .form {

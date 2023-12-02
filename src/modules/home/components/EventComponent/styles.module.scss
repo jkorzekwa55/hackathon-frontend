@@ -1,0 +1,40 @@
+.date{
+  color: var(--light_blue);
+  font-size: small;
+  text-align: left;
+  margin-left: 5px;
+}
+.fname{
+  font-weight: bold;
+  text-align: left;
+  margin-left: 5px;
+  margin-bottom: 3px;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.location{
+  color: gray;
+  font-size: small;
+  text-align: left;
+  margin-left: 5px;
+
+  display: flex;
+  align-items: center;
+  gap: .2rem;
+}
+.message{
+  text-align: left;
+  margin-left: 5px;
+}
+.inner_box {
+  cursor: pointer;
+  min-width: 25rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 17px;
+  box-sizing: border-box;
+  width: 100%;
+  margin: auto;
+  box-shadow: 2px 2px 18px rgba(224, 224, 224, 0.48);
+}

@@ -1,18 +1,21 @@
-import React, { Suspense } from 'react';
+import React, {Suspense, useState} from 'react';
 import { createBrowserRouter, RouteObject, RouterProvider } from "react-router-dom";
 import SignInEmail from "./modules/sign-in/pages/SignInEmail";
 import SignInEmailCode from "./modules/sign-in/pages/SignInEmailCode";
 import SignInFillData from "./modules/sign-in/pages/SignInFillData";
 import Home from "./modules/home/pages/Home";
-import Events from "./modules/sign-in/pages/Events"
+import Events from "./modules/home/components/EventsModalComponent";
+import {AuthenticationContext} from "./AuthenticationContext";
 
 
 function App() {
 
+    const [authenticated, setAuthenticated] = useState(true);
+
     const routes: RouteObject[] = [
         {
             path: "/",
-            element: <Home />,
+            element: <Home setAuthenticated={setAuthenticated}/>,
             errorElement: <div>something unexpected happened</div>,
         },
         {
@@ -21,19 +24,15 @@ function App() {
             errorElement: <div>something unexpected happened</div>,
         },
         {
-            path: "/sign-in/email",
+            path: "/sign-in/code",
             element: <SignInEmailCode />,
             errorElement: <div>something unexpected happened</div>,
 
         },
         {
-            path: "/sign-in/code",
-            element: <SignInFillData />,
+            path: "/sign-in/data",
+            element: <SignInFillData setAuthenticated={setAuthenticated}/>,
             errorElement: <div>something unexpected happened</div>,
-        },
-        {
-            path: "/events",
-            element: <Events />
         }
     ];
 
@@ -41,7 +40,9 @@ function App() {
 
   return (
     <Suspense fallback={<div>future loader</div>}>
-      <RouterProvider router={router} />
+        <AuthenticationContext.Provider value={{authenticated: authenticated}}>
+            <RouterProvider router={router} />
+        </AuthenticationContext.Provider>
     </Suspense>
   );
 }

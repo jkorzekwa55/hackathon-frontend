@@ -28,4 +28,27 @@
     }
 
   }
+
+  .sign_out {
+    position: absolute;
+    background: #fff;
+    right: 1rem;
+    top: 1rem;
+    padding: .5rem 1rem;
+    border-radius: 15px;
+    box-shadow: 0 0 15px 0 rgba(96, 106, 143, 0.33);
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    cursor: pointer;
+    transition: transform ease-in-out 100ms;
+    color: var(--light_text);
+
+    button {
+      all: unset;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+  }
 }
