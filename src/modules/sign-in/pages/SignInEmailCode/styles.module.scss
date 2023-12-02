@@ -6,12 +6,17 @@
   justify-content: center;
 }
 
+.tytul{
+  text-align: center;
+}
+
 .numberInput {
   width: 2vw;
   border-radius: 10px;
   height: 30px;
   text-align: center;
   margin-right: 0.5vw;
+  font-weight: bold;
 }
 
 .form {
@@ -38,7 +43,8 @@
 .submit {
   border-radius: 10px;
   width: 90%;
-  height: 30px;
+  height: 40px;
+  padding-top:10px;
   background-color: #3D30A2;
   color: white;
   margin: auto;

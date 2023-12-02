@@ -49,3 +49,11 @@
 .input:focus {
   outline: none;
 }
+.img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 4px;
+  height: 16px;
+  width: 16px;
+}
