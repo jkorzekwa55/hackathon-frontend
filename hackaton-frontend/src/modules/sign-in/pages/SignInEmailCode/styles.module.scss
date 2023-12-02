@@ -1,0 +1,52 @@
+.container {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.numberInput {
+  width: 2vw;
+  border-radius: 10px;
+  height: 30px;
+  text-align: center;
+  margin-right: 0.5vw;
+}
+
+.form {
+  margin: auto;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.submitContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.inputContainer{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.submit {
+  border-radius: 10px;
+  width: 90%;
+  height: 30px;
+  background-color: #3D30A2;
+  color: white;
+  margin: auto;
+}
+
+.img2 {
+  width: 16px;
+  height: 16px;
+  right: 20px;
+  position: absolute;
+}
