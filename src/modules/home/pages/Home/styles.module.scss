@@ -2,12 +2,19 @@
   width: 100vw;
   height: 100vh;
 
-  .menu_overlay {
+  .menu{
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
-    background: #fff;
+    display: flex;
     bottom: 2rem;
+  }
+
+  .hint{
+    position: absolute;
+    left: 50%;
+  }
+  .menu_overlay {
+    background: #fff;
     padding: .5rem 1rem;
     border-radius: 15px;
     box-shadow: 0 0 15px 0 rgba(96, 106, 143, 0.33);
@@ -16,6 +23,7 @@
     gap: .5rem;
     cursor: pointer;
     transition: transform ease-in-out 100ms;
+    transform: translateX(-50%);
 
     &:hover {
       transform: translate(calc(-50% + 1px), -1px);
