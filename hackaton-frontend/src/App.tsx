@@ -4,6 +4,8 @@ import SignInEmail from "./modules/sign-in/pages/SignInEmail";
 import SignInEmailCode from "./modules/sign-in/pages/SignInEmailCode";
 import SignInFillData from "./modules/sign-in/pages/SignInFillData";
 import Home from "./modules/home/pages/Home";
+import Events from "./modules/sign-in/pages/Events"
+
 
 function App() {
 
@@ -28,6 +30,10 @@ function App() {
             path: "/sign-in/code",
             element: <SignInFillData />,
             errorElement: <div>something unexpected happened</div>,
+        },
+        {
+            path: "/events",
+            element: <Events />
         }
     ];
 

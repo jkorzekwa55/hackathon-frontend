@@ -4,12 +4,14 @@ import React from 'react';
 import styles from "./styles.module.scss";
 import mailIcon from './mail.png';
 import arrIcon from './right.png';
+import {useNavigate} from "react-router";
 
 function SignInEmail() {
+    const navigate = useNavigate();
     return (
         <div className={styles.container}>
 
-            <form className={styles.form}>
+            <form className={styles.form} onSubmit={() => navigate("/sign-in/email")}>
                 <h1 className={styles.tytul}>WeFolk</h1>
                 <h2>Sign in</h2>
                 <div className={styles.div_z_ikona}>

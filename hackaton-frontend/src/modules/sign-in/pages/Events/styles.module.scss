@@ -1,0 +1,53 @@
+.date{
+  color: blue;
+  font-size: small;
+  text-align: left;
+  margin-left: 5px;
+}
+.fname{
+  font-weight: bold;
+  text-align: left;
+  margin-left: 5px;
+  margin-bottom: 3px;
+}
+.location{
+  color: gray;
+  font-size: small;
+  text-align: left;
+  margin-right: 5px;
+
+}
+.message{
+  text-align: left;
+  margin-left: 5px;
+
+
+}
+.tytul{
+  text-align: center;
+}
+.container {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(230,230,230);
+}
+.innerContainer{
+  background-color: rgb(230,230,230);;
+    margin: auto;
+    width: 30%;
+    height: 70%;
+  border-radius: 30px;
+
+
+
+}
+.innerContainer2{
+  border: 1px solid white;
+background-color: white;
+  border-radius: 20px;
+  width: 50%;
+  margin: auto;
+}
