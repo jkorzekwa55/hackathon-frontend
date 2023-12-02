@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import styles from "./styles.module.scss";
 
 
-function Home() {
+function NotificationsBox() {
 
 
     return (
@@ -12,4 +12,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default NotificationsBox;
