@@ -12,11 +12,10 @@ export type EventComponentProps = {
 
 
 function EventComponent(props: EventComponentProps) {
-    // Wed, Apr 28, 5:30 PM
 
 
     if(props == undefined) {
-        return <>nie dziala</>;
+        return <></>;
     }
 
     const date = new Date(props.eventResponse.event.plannedOn);

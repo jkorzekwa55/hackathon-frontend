@@ -1,0 +1,17 @@
+.box {
+  width: 3rem;
+  height: 3rem;
+  background-color: red;
+  overflow: hidden;
+  border: 4px solid #fff;
+  outline: 2px solid var(--light_gray);
+  box-shadow: 1px 1px 12px #939eab;
+  border-radius: 5px;
+
+  .pop_up {
+    position: absolute;
+    top: 0;
+    transform: translateY(-150%);
+    background-color: #fff;
+  }
+}

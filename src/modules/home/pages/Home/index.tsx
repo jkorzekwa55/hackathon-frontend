@@ -1,6 +1,6 @@
 import React, {Dispatch, SetStateAction, useContext, useEffect, useState} from 'react';
 import styles from "./styles.module.scss";
-import Map, {CircleLayer, Layer, Source} from 'react-map-gl';
+import Map, {CircleLayer, Layer, Marker, Source} from 'react-map-gl';
 import users from "../../../../assets/user--multiple.svg";
 import PortalReactDOM from "react-dom";
 import EventsModalComponent from "../../components/EventsModalComponent";
@@ -9,6 +9,7 @@ import {useFetchEvents} from "../../hooks/useFetchEvents";
 import {FeatureCollection} from "geojson";
 import {Navigate} from "react-router";
 import {AuthenticationContext} from "../../../../AuthenticationContext";
+import ActivityComponent from "../../components/ActivityComponent";
 
 export type Coords = {
     longitude: number;
@@ -79,27 +80,10 @@ function Home({setAuthenticated}: HomeProps) {
                         <button onClick={() => signOut()}>Sign out</button>
                     </div>
                     {events &&  events.map && events.map((event) => {
-                            const geojson: FeatureCollection = {
-                                type: 'FeatureCollection',
-                                features: [
-                                    {type: 'Feature', geometry: {type: 'Point', coordinates: [coords?.longitude ?? 0, coords?.latitude ?? 0]}, properties: {id: 1}}
-                                ]
-                            };
-
-                            const layerStyle: CircleLayer = {
-                                id: 'point',
-                                type: 'circle',
-                                paint: {
-                                    'circle-radius': 10,
-                                    'circle-color': '#007cbf'
-                                },
-                            };
-
-                            return (
-                                <Source id="my-data" type="geojson" data={geojson}>
-                                  <Layer {...layerStyle} >
-                                  </Layer>
-                                </Source>
+                        return (
+                                <Marker longitude={event.longitude} latitude={event.latitude} anchor="bottom" >
+                                    <ActivityComponent event={event} />
+                                </Marker>
                             )
                         })}
 

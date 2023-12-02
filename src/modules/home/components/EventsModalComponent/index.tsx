@@ -12,11 +12,6 @@ export type EventsModalComponentProps = {
 function EventsModalComponent({open, setOpen}: EventsModalComponentProps){
     const {events} = useFetchEventResponses();
 
-    useEffect(() => {
-        console.log("my events", events);
-    }, [events]);
-
-
     if(!open) {
         return <></>;
     }

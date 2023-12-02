@@ -43,7 +43,9 @@ function SignInFillData({setAuthenticated}: SignInFillDataProps) {
     });
 
     const { mutate } = useMutation({
-        mutationFn: async (values: SignInAttemptModel) => {
+        mutationFn: async (values: FillDataRequestModel) => {
+
+            console.log("mutate")
 
             return await httpClient.post<FillDataResponseModel>({
                 url: "/user/data-fill",
@@ -94,7 +96,7 @@ function SignInFillData({setAuthenticated}: SignInFillDataProps) {
 
     return (
         <div className={styles.container}>
-            <form className={styles.form} onSubmit={ () => navigate("/sign-in/")}>
+            <form className={styles.form}>
                 <h2 className={styles.tytul}>Fill your data</h2>
                 <div className={styles.inputContainer}>
                     <div className={styles.div_icon}>
@@ -121,7 +123,7 @@ function SignInFillData({setAuthenticated}: SignInFillDataProps) {
                     </div>
                 </div>
                 <div className={styles.submitContainer}>
-                    <input type="submit" value="CONTINUE" className={styles.submit} />
+                    <input type="submit" value="CONTINUE" className={styles.submit} onSubmit={handleSubmit((values) => mutate(values))}/>
                     <div className={styles.arrow_holder}>
                         <img src={arrowRight} className={styles.img2} alt="Arr Icon" />
                     </div>

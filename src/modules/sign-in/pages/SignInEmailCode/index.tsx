@@ -37,6 +37,7 @@ function SignInEmailCode() {
         onSuccess: (res) => {
             sessionStorage.removeItem("email");
             if(res.status == 200) {
+                console.log(res);
                 cookiesHandler.save(Config.token, res.data.access_token);
                 cookiesHandler.save(Config.refreshToken, res.data.refresh_token);
                 cookiesHandler.save(Config.initialized, res.data.initialized.toString());
@@ -142,6 +143,7 @@ function SignInEmailCode() {
                 <div>
                     <h2 className={styles.tytul}>Verification</h2>
                     <p className={styles.form_explainer}>Please enter code from your email to continue</p>
+                    {errorMessage}
                     <div className={styles.code_inputs}>
                         {[1, 2, 3, 4, 5, 6].map((digit, index) => (
                             <input

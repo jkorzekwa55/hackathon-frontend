@@ -42,11 +42,11 @@ export const useFetchEvents = (setAuthenticated: Dispatch<SetStateAction<boolean
         });
     }
 
-    // const {data, isLoading} = useQuery<EventModel[]>(['events', coords], fetchData);
+    const {data, isLoading} = useQuery<EventModel[]>(['events', coords], fetchData);
 
     return {
-        events: [],
-        //isLoading,
+        events: data,
+        isLoading,
         coords,
         setCoords
     }
