@@ -44,6 +44,8 @@ function AddEventFormOpenComponent({open, setOpen, coords}: AddEventFormComponen
                 Authorization: cookiesHandler.get(Config.token) ?? "",
             }
 
+            values.plannedOn = new Date().toISOString();
+
             return await httpClient.post({
                 url: "/event",
                 data: values,
@@ -90,7 +92,7 @@ function AddEventFormOpenComponent({open, setOpen, coords}: AddEventFormComponen
     return(
         <div className={styles.container}>
             <div className={styles.innerContainer}>
-                <form className={styles.form} onSubmit={ () => navigate("/sign-in/")}>
+                <form className={styles.form} onSubmit={handleSubmit((values) => mutate(values))}>
                     <h2 className={styles.tytul}>Fill event data</h2>
                     <div className={styles.inputContainer}>
                         <div className={styles.div_icon}>

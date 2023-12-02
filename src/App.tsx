@@ -1,5 +1,5 @@
 import React, {Suspense, useState} from 'react';
-import { createBrowserRouter, RouteObject, RouterProvider } from "react-router-dom";
+import {createBrowserRouter, createHashRouter, RouteObject, RouterProvider} from "react-router-dom";
 import SignInEmail from "./modules/sign-in/pages/SignInEmail";
 import SignInEmailCode from "./modules/sign-in/pages/SignInEmailCode";
 import SignInFillData from "./modules/sign-in/pages/SignInFillData";
@@ -36,7 +36,7 @@ function App() {
         }
     ];
 
-    const router = createBrowserRouter(routes);
+    const router = createHashRouter(routes);
 
   return (
     <Suspense fallback={<div>future loader</div>}>
